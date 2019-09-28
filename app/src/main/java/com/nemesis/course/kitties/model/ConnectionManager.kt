@@ -13,6 +13,7 @@ class ConnectionManager {
 
         private val BASE_URL = "https://mi-docencia-benv.web.app"
 
+        //Configuración RETROFIT
         private fun create(): KittiesServices{
 
             //Configura GSON
@@ -27,7 +28,7 @@ class ConnectionManager {
             return retrofit.create(KittiesServices::class.java)
         }
 
-        fun loadKitties(success: (kitties:ArrayList<Kitty>) -> Unit, fail: (error: String) -> Unit){
+        fun loadKitties(success: (kitties: ArrayList<Kitty>) -> Unit, fail: (error: String) -> Unit){
 
             val call = ConnectionManager.create().loadKitties()
             call.enqueue(object : Callback<ArrayList<Kitty>>{

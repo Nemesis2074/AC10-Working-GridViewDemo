@@ -6,8 +6,6 @@ import retrofit2.http.GET
 interface KittiesServices {
 
     @GET("/demos/kitties.json")
-    fun loadKitties(): Call<ArrayList<Kitty>>
-
-
+    fun loadKitties(): Call< ArrayList<Kitty> >
 
 }
